@@ -6,17 +6,13 @@ angular.module('myApp', ['ngAnimate'])
 			fetch();
 			addToRecent($scope.city);
 		});
-		
-	var vm = this;
-	
+			
 	$scope.city = 'Kamloops';
 	
 	$scope.presets = ["Vancouver", "Calgary", "Edmonton", "Regina", "Winnipeg", "Toronto", "Victoria", "Montreal", "Quebec City"];
 	
 	$scope.recentSearches = [];
-	
-	$scope.day = null;
-	
+		
 	function addToRecent(city) {
 		if ($scope.recentSearches.indexOf(city) === -1 && $scope.city != '' && $scope.city !== null) {
 			$scope.recentSearches.push(city);
@@ -57,10 +53,4 @@ angular.module('myApp', ['ngAnimate'])
 			}
 		},
 		templateUrl: 'partials/daysComponent.html'
-	})
-	.component('dayComponent', {
-		bindings: {
-			data: '='
-		},
-		templateUrl: 'partials/dayComponent.html'
 	});
