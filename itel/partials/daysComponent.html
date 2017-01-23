@@ -1,0 +1,4 @@
+<div ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex">
+	<img ng-src="images/{{ day.weather[0].icon }}.png" />
+	<caption>{{ day.weather[0].description}}</caption>
+</div>
