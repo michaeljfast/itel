@@ -16,6 +16,9 @@
 	<!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
 	
+	<!-- NgAnimate -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	
 	<!-- App -->
 	<script src="javascripts/app.js"></script>
 
@@ -29,14 +32,19 @@
   <body>
 	<header></header>
     <div class="container">
-		<h1 class="center">16-Day Weather Forecast</h1>
-		<form class="center">
-			<label>City:</label>
-			<input type="text" ng-model="city" ng-model-options="{ debounce: 1000 }" placeholder="Enter a city name here">
-			<input type="submit" name="clear" value="Clear" ng-click="city = null" />
-		</form>
-		<div id="presets">
-			<span ng-repeat="preset in presets" ng-click="$parent.city = preset">{{preset}}</span>
+		<div class="center">
+			<h1>16-Day Weather Forecast</h1>
+			<form>
+				<label>City:</label>
+				<input type="text" ng-model="city" ng-model-options="{ debounce: 1000 }" placeholder="Enter a city name here">
+				<input type="submit" name="clear" value="Clear" ng-click="city = null" />
+			</form>
+			<div id="recent" ng-show="recentSearches">
+				<span><strong>Recent Searches:</strong></span> <span ng-repeat="recent in recentSearches" ng-click="$parent.city = recent">{{recent}}{{$last ? '' : ', '}}</span>
+			</div>
+			<div id="presets">
+				<span ng-repeat="preset in presets" ng-click="$parent.city = preset">{{preset}}</span>
+			</div>
 		</div>
 		<div ng-if="days && !error">
 			<h3>Showing results for: {{city}} </h3>
@@ -44,6 +52,9 @@
 		</div>
 		<div ng-if="error">
 			<h3>No results found, please enter a new city or select one of the presets.</h3>
+		</div>
+		<div ng-if="day">
+			<day-component data="day"></day-component>
 		</div>
 	</div>
 	<footer></footer>

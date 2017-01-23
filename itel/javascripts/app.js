@@ -1,15 +1,31 @@
 'use strict';
 
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
 	.controller('WeatherController', function($scope, $http) {
 		$scope.$watch('city', function() {
 			fetch();
+			addToRecent($scope.city);
 		});
+		
+	var vm = this;
 	
 	$scope.city = 'Kamloops';
 	
 	$scope.presets = ["Vancouver", "Calgary", "Edmonton", "Regina", "Winnipeg", "Toronto", "Victoria", "Montreal", "Quebec City"];
 	
+	$scope.recentSearches = [];
+	
+	$scope.day = null;
+	
+	function addToRecent(city) {
+		if ($scope.recentSearches.indexOf(city) === -1 && $scope.city != '' && $scope.city !== null) {
+			$scope.recentSearches.push(city);
+			if ($scope.recentSearches.length > 5) {
+				$scope.recentSearches.splice(0, 1);
+			}
+		}
+	}
+		
 	function fetch() {
 		$scope.error = false;
 		if ($scope.city == '' || $scope.city === null) {
@@ -24,20 +40,16 @@ angular.module('myApp', [])
 	
 	$scope.select = function(){
 		this.setSelectionRange(0, this.value.length);
-	}
-	
-	function popup(day) {
-		console.log(day);
-		console.log(test);
-	}
+	}	
 })
 	.component('daysComponent', {
 		bindings: {
-			data: '=',
+			data: '='
 		},
-		controller: function () {
+		controller: function ($scope) {
 			this.daysDisplayed = 5;
 			this.daysStartIndex = 0;
+			this.showMore = null;
 			this.paginate = function(direction) {
 				this.daysStartIndex += parseInt(direction, 10);
 				this.daysStartIndex = (this.daysStartIndex <= 0 ? 0 : this.daysStartIndex);
@@ -45,4 +57,10 @@ angular.module('myApp', [])
 			}
 		},
 		templateUrl: 'partials/daysComponent.html'
+	})
+	.component('dayComponent', {
+		bindings: {
+			data: '='
+		},
+		templateUrl: 'partials/dayComponent.html'
 	});

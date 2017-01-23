@@ -1,16 +1,28 @@
 <h5>Week of {{$ctrl.data.list[$ctrl.daysStartIndex].dt * 1000 | date:'MMM. d'}} - {{$ctrl.data.list[$ctrl.daysDisplayed + $ctrl.daysStartIndex - 1].dt * 1000 | date:'MMM. d'}}</h5>
 <div class="flex-container">
-	<div class="flex-item" ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex" ng-click="popup(day)">
+	<div class="flex-item" ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex">
 		<div class="date">{{ (day.dt * 1000) | date:'EEEE'}}</div>
 		<img ng-src="images/{{ day.weather[0].icon }}.png" />
 		<div class="info">
 			<div class="capitalize">{{ day.weather[0].description }}</div>
 			<div>High: {{ day.temp.max | number: 0 }}&deg;C</div>
 			<div>Low: {{ day.temp.min | number: 0 }}&deg;C</div>
+			<div class="showMore" ng-show="$ctrl.showMore">
+				<div>Morn: {{day.temp.morn | number: 0 }}&deg;C</div>
+				<div>Day: {{day.temp.day | number: 0 }}&deg;C</div>
+				<div>Eve: {{day.temp.eve | number: 0 }}&deg;C</div>
+				<div>Night: {{day.temp.night | number: 0 }}&deg;C</div>
+				<div>Pressure: {{day.pressure}}hPa</div>
+				<div>Humidity: {{day.humidity}}%</div>
+				<div>Wind Speed: {{day.speed}}m/s</div>
+				<div>Wind Deg: {{day.deg}}</div>
+				<div>Clouds: {{day.clouds}}%</div>
+			</div>
 		</div>
 	</div>
 </div>
+<span class="pointer" ng-click="$ctrl.showMore = !$ctrl.showMore">Click to toggle more details</span>
 <div id="pagination" unselectable="on">
-	<span ng-click="$ctrl.paginate(-5)" class="glyphicon glyphicon-menu-left"></span>
-	<span ng-click="$ctrl.paginate(5)" class="glyphicon glyphicon-menu-right"></span>
+	<span ng-click="$ctrl.paginate(-5)" class="glyphicon glyphicon-menu-left pointer"></span>
+	<span ng-click="$ctrl.paginate(5)" class="glyphicon glyphicon-menu-right pointer"></span>
 </div>

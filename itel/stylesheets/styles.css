@@ -8789,37 +8789,37 @@ button.close {
   }
 }
 /* line 1, ../sass/_custom.scss */
-* {
-  font-size: 18px;
-}
-
-/* line 4, ../sass/_custom.scss */
 header, footer {
   height: 100px;
   width: 100%;
   background: #29576d;
 }
 
-/* line 9, ../sass/_custom.scss */
+/* line 6, ../sass/_custom.scss */
 footer {
-  /* position: fixed; */
-  bottom: 0;
+  position: relative;
+  margin-top: 114px;
   width: 100%;
 }
 
-/* line 14, ../sass/_custom.scss */
+/* line 11, ../sass/_custom.scss */
 h1 {
-  margin-bottom: 70px;
+  margin-bottom: 55px;
 }
 
-/* line 17, ../sass/_custom.scss */
+/* line 14, ../sass/_custom.scss */
 .capitalize {
   text-transform: capitalize;
 }
 
-/* line 20, ../sass/_custom.scss */
+/* line 17, ../sass/_custom.scss */
 .center {
   text-align: center;
+}
+
+/* line 20, ../sass/_custom.scss */
+.pointer {
+  cursor: pointer;
 }
 
 /* line 23, ../sass/_custom.scss */
@@ -8857,28 +8857,32 @@ h1 {
   background-color: #f08701;
   border: 2px solid #666;
 }
-/* line 54, ../sass/_custom.scss */
+/* line 53, ../sass/_custom.scss */
+.flex-container .flex-item:hover {
+  cursor: pointer;
+}
+/* line 57, ../sass/_custom.scss */
 .flex-container .flex-item img {
   display: block;
   margin: 5px auto;
   padding: 3px;
 }
-/* line 60, ../sass/_custom.scss */
+/* line 63, ../sass/_custom.scss */
 .flex-container .flex-item .date {
   font-size: 22px;
-  padding: 15px 45px;
+  padding: 15px 50px;
   border-bottom: 3px solid #fff;
 }
-/* line 66, ../sass/_custom.scss */
+/* line 69, ../sass/_custom.scss */
 .flex-container .flex-item .info {
   padding-bottom: 30px;
 }
-/* line 69, ../sass/_custom.scss */
+/* line 72, ../sass/_custom.scss */
 .flex-container .flex-item .info div {
   font-size: 16px;
 }
 
-/* line 76, ../sass/_custom.scss */
+/* line 78, ../sass/_custom.scss */
 #pagination {
   float: right;
   -webkit-user-select: none;
@@ -8891,22 +8895,48 @@ h1 {
   -o-user-select: none;
   user-select: none;
 }
-/* line 86, ../sass/_custom.scss */
-#pagination span {
-  cursor: pointer;
-}
 
-/* line 90, ../sass/_custom.scss */
+/* line 88, ../sass/_custom.scss */
 #presets {
-  text-align: center;
+  margin-bottom: 45px;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 /* line 93, ../sass/_custom.scss */
 #presets span {
-  font-size: 14px;
   margin-right: 6px;
 }
-/* line 98, ../sass/_custom.scss */
+/* line 95, ../sass/_custom.scss */
 #presets span:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* line 103, ../sass/_custom.scss */
+#recent span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* line 109, ../sass/_custom.scss */
+.showMore {
+  transition: all linear 0.5s;
+}
+
+/* line 112, ../sass/_custom.scss */
+.showMore.ng-hide {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 960px) {
+  /* line 116, ../sass/_custom.scss */
+  .flex-container {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  /* line 120, ../sass/_custom.scss */
+  .flex-container .flex-item:first-child, .flex-container .flex-item:last-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

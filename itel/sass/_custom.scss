@@ -1,24 +1,24 @@
-* {
-	font-size: $font-size-h4;
-}
 header, footer {
 	height: 100px;
 	width: 100%;
 	background: rgb(41, 87, 109);
 }
 footer {
-	/* position: fixed; */
-	bottom: 0;
+	position: relative;
+	margin-top: 114px;
 	width: 100%;
 }
 h1 {
-	margin-bottom: 70px;
+	margin-bottom: 55px;
 }
 .capitalize {
 	text-transform: capitalize;
 }
 .center {
 	text-align: center;
+}
+.pointer {
+	cursor: pointer;
 }
 .container {
 	margin: 70px auto;
@@ -50,6 +50,9 @@ h1 {
 		overflow: auto;
 		background-color: #f08701;
 		border: 2px solid #666;
+		&:hover {
+			cursor: pointer;
+		}
 		
 		img {
 			display: block;
@@ -59,7 +62,7 @@ h1 {
 		
 		.date {
 			font-size: 22px;
-			padding: 15px 45px;
+			padding: 15px 50px;
 			border-bottom: 3px solid #fff;
 		}
 		
@@ -72,7 +75,6 @@ h1 {
 		}
 	}	
 }
-
 #pagination {
 	float: right;
 	-webkit-user-select: none; /* Chrome/Safari */        
@@ -82,21 +84,42 @@ h1 {
 	/* Rules below not implemented in browsers yet */
 	-o-user-select: none;
 	user-select: none;
-	
-	span {
-		cursor: pointer;
-	}
 }
 #presets {
-	text-align: center;
+	margin-bottom: 45px;
+	word-break: break-all;
+	word-wrap: break-word;
 	
 	span {
-		font-size: 14px;
 		margin-right: 6px;
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
 	}
+}
+#recent {
+	span {
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
+}
+.showMore {
+	transition: all linear 0.5s;
+}
+.showMore.ng-hide {
+	opacity: 0;
+}
+@media only screen and (max-width: 960px) {
+	.flex-container {	
+		margin-top: auto;
+		margin-bottom: auto;
 	
-	span:hover {
-		cursor: pointer;
-		text-decoration: underline;
+		.flex-item:first-child, .flex-item:last-child {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }
