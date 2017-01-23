@@ -1,0 +1,49 @@
+* {
+	font-size: $font-size-h4;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	text-align: center;
+	background-color: #eee;
+	margin-bottom: 5px;
+}
+.flex-item {
+	background-color: #cce6ff;
+	margin: 15px 10px;
+	padding: 20px;
+	overflow: auto;
+	width: 20%;
+	
+	img {
+		display: block;
+		margin: 5px auto;
+		padding: 3px;
+	}
+}
+
+form {
+	text-align: center;
+	margin: 30px 0;
+}
+
+#pagination {
+	float: right;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	
+	span {
+		cursor: pointer;
+		cursor: hand;
+	}
+}
