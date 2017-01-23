@@ -17,8 +17,6 @@ angular.module('myApp', [])
 	
 	$scope.fetch = fetch;
 	
-	}
-	
 	$scope.select = function(){
 		this.setSelectionRange(0, this.value.length);
 	}
@@ -31,9 +29,9 @@ angular.module('myApp', [])
 			this.daysDisplayed = 5;
 			this.daysStartIndex = 0;
 			this.paginate = function(direction) {
-				var lastListIndex = this.data.list.length -1;
-				var newStartIndex = this.daysStartIndex + direction;
-				this.daysStartIndex = Math.min(Math.max(0, newStartIndex), lastListIndex);
+				this.daysStartIndex += parseInt(direction, 10);
+				this.daysStartIndex = (this.daysStartIndex <= 0 ? 0 : this.daysStartIndex);
+				this.daysStartIndex = (this.daysStartIndex >= (this.data.list.length -1) ? (this.data.list.length -5) : this.daysStartIndex);
 			}
 		},
 		templateUrl: 'partials/daysComponent.html'
