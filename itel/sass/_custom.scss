@@ -1,0 +1,62 @@
+* {
+	font-size: $font-size-h4;
+}
+.capitalize {
+	text-transform: capitalize;
+}
+.container-fluid {
+	margin-top: 150px;
+}
+.flex-container {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-flex-wrap: wrap;
+	flex-wrap: wrap;
+	text-align: center;
+	background-color: #f08701;
+	margin-bottom: 5px;
+	color: white;
+}
+.flex-item {
+	margin: 20px auto;
+	padding: 20px;
+	overflow: auto;
+	
+	img {
+		display: block;
+		margin: 5px auto;
+		padding: 3px;
+	}
+}
+
+form {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#pagination {
+	float: right;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	
+	span {
+		cursor: pointer;
+	}
+}
+header, footer {
+	height: 100px;
+	width: 100%;
+	background: rgb(41, 87, 109);
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}

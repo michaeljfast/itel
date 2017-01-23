@@ -367,8 +367,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?1484950125);
-  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?&1484950125#iefix) format("embedded-opentype"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff2?1484950125) format("woff2"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff?1484950125) format("woff"), url(/fonts/bootstrap/glyphicons-halflings-regular.ttf?1484950125) format("truetype"), url(/fonts/bootstrap/glyphicons-halflings-regular.svg?1484950125#glyphicons_halflingsregular) format("svg");
+  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?1469479382);
+  src: url(/fonts/bootstrap/glyphicons-halflings-regular.eot?&1469479382#iefix) format("embedded-opentype"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff2?1469479382) format("woff2"), url(/fonts/bootstrap/glyphicons-halflings-regular.woff?1469479382) format("woff"), url(/fonts/bootstrap/glyphicons-halflings-regular.ttf?1469479382) format("truetype"), url(/fonts/bootstrap/glyphicons-halflings-regular.svg?1469479382#glyphicons_halflingsregular) format("svg");
 }
 /* line 24, ../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/bootstrap-sass-3.3.7/assets/stylesheets/bootstrap/_glyphicons.scss */
 .glyphicon {
@@ -8787,4 +8787,83 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+/* line 1, ../sass/_custom.scss */
+* {
+  font-size: 18px;
+}
+
+/* line 4, ../sass/_custom.scss */
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* line 7, ../sass/_custom.scss */
+.container-fluid {
+  margin-top: 150px;
+}
+
+/* line 10, ../sass/_custom.scss */
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: #f08701;
+  margin-bottom: 5px;
+  color: white;
+}
+
+/* line 22, ../sass/_custom.scss */
+.flex-item {
+  margin: 20px auto;
+  padding: 20px;
+  overflow: auto;
+}
+/* line 27, ../sass/_custom.scss */
+.flex-item img {
+  display: block;
+  margin: 5px auto;
+  padding: 3px;
+}
+
+/* line 34, ../sass/_custom.scss */
+form {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* line 39, ../sass/_custom.scss */
+#pagination {
+  float: right;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+}
+/* line 49, ../sass/_custom.scss */
+#pagination span {
+  cursor: pointer;
+}
+
+/* line 53, ../sass/_custom.scss */
+header, footer {
+  height: 100px;
+  width: 100%;
+  background: #29576d;
+}
+
+/* line 58, ../sass/_custom.scss */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

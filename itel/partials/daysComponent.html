@@ -1,4 +1,15 @@
-<div ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex">
-	<img ng-src="images/{{ day.weather[0].icon }}.png" />
-	<caption>{{ day.weather[0].description}}</caption>
+<div class="flex-container">
+	<div class="day flex-item" ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex">
+		<div class="date">{{ (day.dt * 1000) | date:'EEEE, MMM.d'}}</div>
+		<img ng-src="images/{{ day.weather[0].icon }}.png" />
+		<caption>
+			<div class="capitalize">{{ day.weather[0].description }}</div>
+			<div>High: {{ day.temp.max | number: 0 }}&deg;C</div>
+			<div>Low: {{ day.temp.min | number: 0 }}&deg;C</div>
+		</caption>
+	</div>
+</div>
+<div id="pagination" unselectable="on">
+	<span ng-click="$ctrl.paginate(-5)" class="glyphicon glyphicon-menu-left"></span>
+	<span ng-click="$ctrl.paginate(5)" class="glyphicon glyphicon-menu-right"></span>
 </div>
