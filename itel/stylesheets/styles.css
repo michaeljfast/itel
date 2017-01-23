@@ -8802,28 +8802,32 @@ header, footer {
 
 /* line 9, ../sass/_custom.scss */
 footer {
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   width: 100%;
 }
 
 /* line 14, ../sass/_custom.scss */
-form {
-  text-align: center;
-  margin-bottom: 30px;
+h1 {
+  margin-bottom: 70px;
 }
 
-/* line 18, ../sass/_custom.scss */
+/* line 17, ../sass/_custom.scss */
 .capitalize {
   text-transform: capitalize;
 }
 
-/* line 21, ../sass/_custom.scss */
-.container-fluid {
-  margin-top: 150px;
+/* line 20, ../sass/_custom.scss */
+.center {
+  text-align: center;
 }
 
-/* line 24, ../sass/_custom.scss */
+/* line 23, ../sass/_custom.scss */
+.container {
+  margin: 70px auto;
+}
+
+/* line 26, ../sass/_custom.scss */
 .flex-container {
   display: -webkit-flex;
   display: flex;
@@ -8831,26 +8835,50 @@ form {
   justify-content: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  resize: vertical;
   text-align: center;
-  background-color: #f08701;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   color: white;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
-
-/* line 36, ../sass/_custom.scss */
-.flex-item {
+/* line 40, ../sass/_custom.scss */
+.flex-container .flex-item:first-child {
+  margin-left: 0px;
+}
+/* line 44, ../sass/_custom.scss */
+.flex-container .flex-item:last-child {
+  margin-right: 0px;
+}
+/* line 48, ../sass/_custom.scss */
+.flex-container .flex-item {
   margin: 20px auto;
-  padding: 20px;
   overflow: auto;
+  background-color: #f08701;
+  border: 2px solid #666;
 }
-/* line 41, ../sass/_custom.scss */
-.flex-item img {
+/* line 54, ../sass/_custom.scss */
+.flex-container .flex-item img {
   display: block;
   margin: 5px auto;
   padding: 3px;
 }
+/* line 60, ../sass/_custom.scss */
+.flex-container .flex-item .date {
+  font-size: 22px;
+  padding: 15px 45px;
+  border-bottom: 3px solid #fff;
+}
+/* line 66, ../sass/_custom.scss */
+.flex-container .flex-item .info {
+  padding-bottom: 30px;
+}
+/* line 69, ../sass/_custom.scss */
+.flex-container .flex-item .info div {
+  font-size: 16px;
+}
 
-/* line 47, ../sass/_custom.scss */
+/* line 76, ../sass/_custom.scss */
 #pagination {
   float: right;
   -webkit-user-select: none;
@@ -8863,7 +8891,22 @@ form {
   -o-user-select: none;
   user-select: none;
 }
-/* line 57, ../sass/_custom.scss */
+/* line 86, ../sass/_custom.scss */
 #pagination span {
   cursor: pointer;
+}
+
+/* line 90, ../sass/_custom.scss */
+#presets {
+  text-align: center;
+}
+/* line 93, ../sass/_custom.scss */
+#presets span {
+  font-size: 14px;
+  margin-right: 6px;
+}
+/* line 98, ../sass/_custom.scss */
+#presets span:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

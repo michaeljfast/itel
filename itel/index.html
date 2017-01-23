@@ -28,21 +28,22 @@
   </head>
   <body>
 	<header></header>
-    <div class="container-fluid">
-		<form>
+    <div class="container">
+		<h1 class="center">16-Day Weather Forecast</h1>
+		<form class="center">
 			<label>City:</label>
 			<input type="text" ng-model="city" ng-model-options="{ debounce: 1000 }" placeholder="Enter a city name here">
+			<input type="submit" name="clear" value="Clear" ng-click="city = null" />
 		</form>
-		<div ng-if="days">
+		<div id="presets">
+			<span ng-repeat="preset in presets" ng-click="$parent.city = preset">{{preset}}</span>
+		</div>
+		<div ng-if="days && !error">
 			<h3>Showing results for: {{city}} </h3>
 			<days-component data="days"></days-component>
 		</div>
-		<div ng-if="!days">
-			No results found.
-		</div>
-		<div ng-if="days === null || error">
-			Error getting data.
-			<input type="submit" ng-click="fetch()">Try again</input>
+		<div ng-if="error">
+			<h3>No results found, please enter a new city or select one of the presets.</h3>
 		</div>
 	</div>
 	<footer></footer>

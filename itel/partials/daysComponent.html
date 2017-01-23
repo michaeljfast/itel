@@ -1,12 +1,13 @@
+<h5>Week of {{$ctrl.data.list[$ctrl.daysStartIndex].dt * 1000 | date:'MMM. d'}} - {{$ctrl.data.list[$ctrl.daysDisplayed + $ctrl.daysStartIndex - 1].dt * 1000 | date:'MMM. d'}}</h5>
 <div class="flex-container">
-	<div class="day flex-item" ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex">
-		<div class="date">{{ (day.dt * 1000) | date:'EEEE, MMM.d'}}</div>
+	<div class="flex-item" ng-repeat="day in $ctrl.data.list | limitTo: $ctrl.daysDisplayed : $ctrl.daysStartIndex" ng-click="popup(day)">
+		<div class="date">{{ (day.dt * 1000) | date:'EEEE'}}</div>
 		<img ng-src="images/{{ day.weather[0].icon }}.png" />
-		<caption>
+		<div class="info">
 			<div class="capitalize">{{ day.weather[0].description }}</div>
 			<div>High: {{ day.temp.max | number: 0 }}&deg;C</div>
 			<div>Low: {{ day.temp.min | number: 0 }}&deg;C</div>
-		</caption>
+		</div>
 	</div>
 </div>
 <div id="pagination" unselectable="on">

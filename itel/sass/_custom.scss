@@ -7,19 +7,21 @@ header, footer {
 	background: rgb(41, 87, 109);
 }
 footer {
-	position: fixed;
+	/* position: fixed; */
 	bottom: 0;
 	width: 100%;
 }
-form {
-	text-align: center;
-	margin-bottom: 30px;
+h1 {
+	margin-bottom: 70px;
 }
 .capitalize {
 	text-transform: capitalize;
 }
-.container-fluid {
-	margin-top: 150px;
+.center {
+	text-align: center;
+}
+.container {
+	margin: 70px auto;
 }
 .flex-container {
 	display: -webkit-flex;
@@ -28,22 +30,49 @@ form {
 	justify-content: center;
 	-webkit-flex-wrap: wrap;
 	flex-wrap: wrap;
+	resize: vertical;
 	text-align: center;
-	background-color: #f08701;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	color: white;
-}
-.flex-item {
-	margin: 20px auto;
-	padding: 20px;
-	overflow: auto;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 	
-	img {
-		display: block;
-		margin: 5px auto;
-		padding: 3px;
+	.flex-item:first-child {
+		margin-left: 0px;
 	}
+	
+	.flex-item:last-child {
+		margin-right: 0px;
+	}
+	
+	.flex-item {
+		margin: 20px auto;
+		overflow: auto;
+		background-color: #f08701;
+		border: 2px solid #666;
+		
+		img {
+			display: block;
+			margin: 5px auto;
+			padding: 3px;
+		}
+		
+		.date {
+			font-size: 22px;
+			padding: 15px 45px;
+			border-bottom: 3px solid #fff;
+		}
+		
+		.info {
+			padding-bottom: 30px;
+			
+			div {
+				font-size: 16px;
+			}
+		}
+	}	
 }
+
 #pagination {
 	float: right;
 	-webkit-user-select: none; /* Chrome/Safari */        
@@ -56,5 +85,18 @@ form {
 	
 	span {
 		cursor: pointer;
+	}
+}
+#presets {
+	text-align: center;
+	
+	span {
+		font-size: 14px;
+		margin-right: 6px;
+	}
+	
+	span:hover {
+		cursor: pointer;
+		text-decoration: underline;
 	}
 }
