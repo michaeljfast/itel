@@ -38,6 +38,13 @@
 			<h3>Showing results for: {{city}} </h3>
 			<days-component data="days"></days-component>
 		</div>
+		<div ng-if="!days">
+			No results found.
+		</div>
+		<div ng-if="days === null || !error">
+			Error getting data.
+			<input type="submit" ng-click="fetch()">Try again</input>
+		</div>
 	</div>
 	<footer></footer>
   </body>

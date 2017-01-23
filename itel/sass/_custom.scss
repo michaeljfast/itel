@@ -1,6 +1,20 @@
 * {
 	font-size: $font-size-h4;
 }
+header, footer {
+	height: 100px;
+	width: 100%;
+	background: rgb(41, 87, 109);
+}
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+form {
+	text-align: center;
+	margin-bottom: 30px;
+}
 .capitalize {
 	text-transform: capitalize;
 }
@@ -30,12 +44,6 @@
 		padding: 3px;
 	}
 }
-
-form {
-	text-align: center;
-	margin-bottom: 30px;
-}
-
 #pagination {
 	float: right;
 	-webkit-user-select: none; /* Chrome/Safari */        
@@ -49,14 +57,4 @@ form {
 	span {
 		cursor: pointer;
 	}
-}
-header, footer {
-	height: 100px;
-	width: 100%;
-	background: rgb(41, 87, 109);
-}
-footer {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
 }
